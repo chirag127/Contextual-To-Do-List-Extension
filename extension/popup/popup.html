@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextual To-Do List</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="popup.css">
+  <script src="../utils/auth.js"></script>
+  <script src="../utils/storage.js"></script>
+  <script src="../utils/api.js"></script>
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>Contextual To-Do List</h1>
+      <div id="user-profile" class="user-profile hidden">
+        <img id="user-avatar" src="" alt="User avatar">
+        <div class="user-info">
+          <span id="user-name"></span>
+          <button id="sign-out-btn" class="btn btn-small">Sign Out</button>
+        </div>
+      </div>
+      <div id="auth-buttons" class="auth-buttons">
+        <button id="sign-in-btn" class="btn btn-primary">Sign In</button>
+      </div>
+    </header>
+    
+    <div class="tabs">
+      <button id="tab-current" class="tab-btn active">Current Page</button>
+      <button id="tab-all" class="tab-btn">All Tasks</button>
+      <button id="tab-upcoming" class="tab-btn">Upcoming</button>
+    </div>
+    
+    <div id="tab-content-current" class="tab-content active">
+      <div class="current-page-info">
+        <h2 id="current-page-title">Current Page</h2>
+        <p id="current-page-url" class="url-text"></p>
+      </div>
+      
+      <div class="add-task-container">
+        <input type="text" id="new-task-input" placeholder="Add a new task...">
+        <button id="add-task-btn" class="btn btn-primary">Add</button>
+      </div>
+      
+      <div id="current-page-tasks" class="tasks-list">
+        <!-- Tasks will be added here dynamically -->
+        <div class="empty-state" id="current-empty-state">
+          <p>No tasks for this page yet.</p>
+          <p>Add your first task above!</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="tab-content-all" class="tab-content">
+      <h2>All Tasks</h2>
+      <div id="all-tasks" class="tasks-list">
+        <!-- All tasks will be added here dynamically -->
+        <div class="empty-state" id="all-empty-state">
+          <p>No tasks yet.</p>
+          <p>Add tasks to pages you visit!</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="tab-content-upcoming" class="tab-content">
+      <h2>Upcoming Tasks</h2>
+      <div class="upcoming-container">
+        <div class="upcoming-section">
+          <h3>Due Today</h3>
+          <div id="due-today-tasks" class="tasks-list">
+            <!-- Due today tasks will be added here dynamically -->
+            <div class="empty-state" id="today-empty-state">
+              <p>No tasks due today.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="upcoming-section">
+          <h3>Overdue</h3>
+          <div id="overdue-tasks" class="tasks-list">
+            <!-- Overdue tasks will be added here dynamically -->
+            <div class="empty-state" id="overdue-empty-state">
+              <p>No overdue tasks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="popup-footer">
+      <button id="open-options-btn" class="btn btn-text">Options</button>
+      <button id="sync-btn" class="btn btn-text" disabled>Sync</button>
+    </footer>
+  </div>
+  
+  <!-- Task edit modal -->
+  <div id="edit-task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Edit Task</h2>
+      <form id="edit-task-form">
+        <input type="hidden" id="edit-task-id">
+        <div class="form-group">
+          <label for="edit-task-title">Title</label>
+          <input type="text" id="edit-task-title" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-task-description">Description (optional)</label>
+          <textarea id="edit-task-description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="edit-task-due-date">Due Date (optional)</label>
+          <input type="datetime-local" id="edit-task-due-date">
+        </div>
+        <div class="form-group">
+          <label for="edit-task-priority">Priority</label>
+          <select id="edit-task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="delete-task-btn" class="btn btn-danger">Delete</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

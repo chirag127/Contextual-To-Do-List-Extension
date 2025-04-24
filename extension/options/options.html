@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contextual To-Do List Options</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="options.css">
+  <script src="../utils/auth.js"></script>
+  <script src="../utils/storage.js"></script>
+  <script src="../utils/api.js"></script>
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>Contextual To-Do List Options</h1>
+      <div id="user-profile" class="user-profile hidden">
+        <img id="user-avatar" src="" alt="User avatar">
+        <div class="user-info">
+          <span id="user-name"></span>
+          <button id="sign-out-btn" class="btn btn-small">Sign Out</button>
+        </div>
+      </div>
+      <div id="auth-buttons" class="auth-buttons">
+        <button id="sign-in-btn" class="btn btn-primary">Sign In</button>
+      </div>
+    </header>
+    
+    <div class="options-content">
+      <div class="options-section">
+        <h2>General Settings</h2>
+        
+        <div class="form-group">
+          <label for="sidebar-position">Sidebar Position</label>
+          <select id="sidebar-position" class="form-control">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="default-priority">Default Task Priority</label>
+          <select id="default-priority" class="form-control">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="auto-show-sidebar" class="form-checkbox">
+            <label for="auto-show-sidebar">Automatically show sidebar when tasks exist for a page</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="show-notifications" class="form-checkbox">
+            <label for="show-notifications">Show notifications for upcoming tasks</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="options-section">
+        <h2>Data Management</h2>
+        
+        <div class="form-group">
+          <button id="export-data-btn" class="btn btn-secondary">Export Data</button>
+          <p class="form-help">Export all your tasks as a JSON file</p>
+        </div>
+        
+        <div class="form-group">
+          <label for="import-data">Import Data</label>
+          <div class="file-input-group">
+            <input type="file" id="import-data" class="form-control" accept=".json">
+            <button id="import-data-btn" class="btn btn-secondary">Import</button>
+          </div>
+          <p class="form-help">Import tasks from a previously exported JSON file</p>
+        </div>
+        
+        <div class="form-group">
+          <button id="clear-data-btn" class="btn btn-danger">Clear All Data</button>
+          <p class="form-help">Delete all your tasks (cannot be undone)</p>
+        </div>
+      </div>
+      
+      <div class="options-section">
+        <h2>Sync Settings</h2>
+        
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="auto-sync" class="form-checkbox">
+            <label for="auto-sync">Automatically sync tasks when changes are made</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <button id="sync-now-btn" class="btn btn-primary" disabled>Sync Now</button>
+          <p id="last-sync-time" class="form-help">Last synced: Never</p>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="options-footer">
+      <button id="save-options-btn" class="btn btn-primary">Save Options</button>
+      <div class="version-info">
+        <span>Version 1.0.0</span>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Confirmation modal -->
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title">Confirmation</h2>
+      <p id="modal-message">Are you sure you want to proceed?</p>
+      <div class="modal-actions">
+        <button id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+        <button id="modal-confirm-btn" class="btn btn-danger">Confirm</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

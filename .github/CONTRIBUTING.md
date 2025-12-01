@@ -1,136 +1,245 @@
-# 🚀 Contributing to FocusFlow-Contextual-Productivity-Browser-Extension
+# Contributing to FocusFlow-Contextual-Productivity-Browser-Extension
 
-Welcome, and thank you for considering contributing to FocusFlow! We aim to maintain a high standard of code quality, efficiency, and user experience. By adhering to these guidelines, you help us ensure a robust and maintainable project.
+We are thrilled that you're interested in contributing to `FocusFlow-Contextual-Productivity-Browser-Extension`! Your contributions help us build a more intelligent and efficient productivity tool. This document outlines guidelines for contributing to this project.
 
-## 1. Code of Conduct
+Please note that this project is released with a [Code of Conduct](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/.github/CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.
 
-This project adheres to the Contributor Covenant Code of Conduct. Please read the [CODE_OF_CONDUCT.md](https://github.com/your-username/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/CODE_OF_CONDUCT.md) file for details on enforcing this policy.
+## Table of Contents
 
-## 2. Prerequisites
+- [How Can I Contribute?](#how-can-i-contribute)
+  - [Reporting Bugs](#reporting-bugs)
+  - [Suggesting Enhancements](#suggesting-enhancements)
+  - [Writing Code](#writing-code)
+  - [Improving Documentation](#improving-documentation)
+- [Contribution Workflow](#contribution-workflow)
+  - [1. Fork and Clone the Repository](#1-fork-and-clone-the-repository)
+  - [2. Set Up Your Development Environment](#2-set-up-your-development-environment)
+  - [3. Create a New Branch](#3-create-a-new-branch)
+  - [4. Make Your Changes](#4-make-your-changes)
+  - [5. Test Your Changes](#5-test-your-changes)
+  - [6. Lint and Format Your Code](#6-lint-and-format-your-code)
+  - [7. Commit Your Changes](#7-commit-your-changes)
+  - [8. Push Your Branch](#8-push-your-branch)
+  - [9. Open a Pull Request](#9-open-a-pull-request)
+- [Development Setup](#development-setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running in Development Mode](#running-in-development-mode)
+  - [Running Tests](#running-tests)
+  - [Building for Production](#building-for-production)
+- [Styleguides](#styleguides)
+  - [Git Commit Messages](#git-commit-messages)
+  - [JavaScript/TypeScript Style](#javascripttypescript-style)
+  - [Testing Style](#testing-style)
+- [Architectural Principles](#architectural-principles)
+- [Security Guidelines](#security-guidelines)
+- [License](#license)
+- [Thank You](#thank-you)
 
-Before you contribute, ensure you have the following set up:
+## How Can I Contribute?
 
-*   **Node.js LTS:** Version 20 or higher.
-*   **npm or yarn:** Package manager.
-*   **Git:** Version control system.
-*   **IDE:** VS Code with recommended extensions (e.g., Biome, Prettier).
+### Reporting Bugs
 
-## 3. Development Environment Setup
+If you find a bug, please help us by submitting an issue to our [Issue Tracker](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/issues). Before opening a new issue, please check if a similar bug has already been reported.
 
-Follow these steps to get a local development environment running:
+To report a bug, use our [Bug Report Template](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/.github/ISSUE_TEMPLATE/bug_report.md). Provide as much detail as possible, including steps to reproduce, expected behavior, and actual behavior.
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/your-username/FocusFlow-Contextual-Productivity-Browser-Extension.git
-    cd FocusFlow-Contextual-Productivity-Browser-Extension
-    ```
+### Suggesting Enhancements
 
-2.  **Install Dependencies:**
-    ```bash
-    # Using npm
-    npm install
-    # Or using yarn
-    # yarn install
-    ```
+We welcome ideas for new features or improvements! You can suggest an enhancement by opening a new issue on the [Issue Tracker](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/issues). Please describe the enhancement clearly and explain its potential benefits.
 
-3.  **Run in Watch Mode (for rapid development):
-    ```bash
-    # Using npm
-    npm run dev
-    # Or using yarn
-    # yarn dev
-    ```
+### Writing Code
 
-This command will typically start a development server or builder that recompiles on code changes.
+Code contributions are the backbone of open-source projects. Whether it's a new feature, a bug fix, or performance optimization, your code is highly valued. Please follow the [Contribution Workflow](#contribution-workflow) below.
 
-## 4. Contribution Workflow
+### Improving Documentation
 
-We follow a standard GitHub pull request workflow:
+High-quality documentation is crucial. If you find errors, omissions, or areas for improvement in our `README.md` or any other documentation files, please feel free to open a pull request.
 
-1.  **Fork the Project:** Create your own fork of the repository.
-2.  **Create a Branch:** Create a new branch for your feature or bug fix. Use descriptive names (e.g., `feat/add-contextual-highlighting` or `fix/incorrect-task-completion`).
-    ```bash
-    git checkout -b your-branch-name
-    ```
-3.  **Make Your Changes:** Implement your changes, adhering to the project's coding standards.
-4.  **Test Your Changes:** Ensure your changes are thoroughly tested. Run all tests to confirm no regressions.
-    ```bash
-    # Using npm
-    npm run test
-    # Or using yarn
-    # yarn test
-    ```
-5.  **Lint and Format:** Ensure your code adheres to the project's linting and formatting rules.
-    ```bash
-    # Using npm
-    npm run lint:fix
-    # Or using yarn
-    # yarn lint:fix
-    ```
-6.  **Commit Your Changes:** Use Conventional Commits for your commit messages.
-    ```bash
-    # Example: feat: Add new dashboard widget
-    git commit -m "feat: Implement task prioritization logic"
-    ```
-7.  **Push to Your Fork:** Push your branch to your forked repository.
-    ```bash
-    git push origin your-branch-name
-    ```
-8.  **Open a Pull Request:** Create a pull request from your fork to the `main` branch of the original repository.
+## Contribution Workflow
 
-## 5. Coding Standards & Best Practices
+### 1. Fork and Clone the Repository
 
-*   **Language:** TypeScript (Strict mode is enforced).
-*   **Architecture:** WXT for browser extensions. Feature-Sliced Design (FSD) principles are encouraged for maintainability.
-*   **Linting/Formatting:** **Biome** is used for both linting and formatting. All code must pass Biome checks.
-*   **Testing:** **Vitest** for unit tests, **Playwright** for E2E tests. Aim for high test coverage.
-*   **Error Handling:** Implement robust error handling. Use `try-catch` blocks and ensure the extension/app never crashes.
-*   **Performance:** Optimize for speed and resource usage. Follow the principles of Green Software.
-*   **UI/UX:** Adhere to the established UI/UX aesthetic and principles. Ensure smooth animations and fast interactions.
-*   **Comments:** Write self-documenting code. Use comments only to explain the *why*, not the *what*.
-*   **Modularity:** Keep modules focused on a single responsibility (SRP).
+First, fork the `FocusFlow-Contextual-Productivity-Browser-Extension` repository to your GitHub account. Then, clone your fork to your local machine:
 
-## 6. Typescript & WXT Specifics
+bash
+git clone https://github.com/<YOUR_USERNAME>/FocusFlow-Contextual-Productivity-Browser-Extension.git
+cd FocusFlow-Contextual-Productivity-Browser-Extension
 
-*   **Strict Typing:** All TypeScript code must be written with strict type checking enabled (`strict: true` in `tsconfig.json`).
-*   **WXT Configuration:** Understand and utilize WXT's capabilities for managing different browser manifests, content scripts, background scripts, and UI pages.
-*   **State Management:** Prefer reactive primitives (e.g., Signals) for state management where appropriate.
 
-## 7. Testing Guidelines
+### 2. Set Up Your Development Environment
 
-*   **Unit Tests:** All new business logic or complex functions should have corresponding unit tests in the `tests/unit` directory, mirroring the source structure.
-*   **E2E Tests:** For user-facing features and critical workflows, write end-to-end tests in the `tests/e2e` directory using Playwright.
-*   **Coverage:** Strive for 100% test coverage for critical components and business logic.
-*   **Running Tests:**
-    ```bash
-    # Unit tests (Vitest)
-    npm run test:unit
+Ensure you have the necessary prerequisites installed (see [Development Setup](#development-setup)). Then, install project dependencies:
 
-    # E2E tests (Playwright)
-    npm run test:e2e
-    ```
+bash
+npm install # Or pnpm install / yarn install if preferred
 
-## 8. Pull Request (PR) Requirements
 
-Your Pull Request should:
+### 3. Create a New Branch
 
-*   Have a clear and concise title.
-*   Include a detailed description explaining the changes, the problem it solves, and any relevant context.
-*   Link to any related issues (e.g., `Closes #123`).
-*   Pass all automated checks (linting, tests, CI workflow).
-*   Be reviewed by at least one maintainer.
+Create a new branch for your changes. Choose a descriptive name that reflects the nature of your work (e.g., `feat/add-new-dashboard`, `fix/issue-42-login-bug`, `docs/update-readme`):
 
-## 9. Reporting Issues
+bash
+git checkout -b <branch-name>
 
-If you find a bug or have a feature request, please open an issue on GitHub. Provide as much detail as possible:
 
-*   **Bug Reports:** Describe the issue, steps to reproduce, expected behavior, and actual behavior. Include environment details (browser, OS).
-*   **Feature Requests:** Explain the proposed feature, its benefits, and any potential implementation ideas.
+### 4. Make Your Changes
 
-## 10. Code Style & Formatting
+Implement your bug fix, feature, or documentation update. Remember to adhere to our [Styleguides](#styleguides) and [Architectural Principles](#architectural-principles).
 
-Automatic formatting is enforced by **Biome**. Please run `npm run lint:fix` (or `yarn lint:fix`) before committing to ensure consistency.
+### 5. Test Your Changes
 
-## Thank You!
+Ensure your changes haven't introduced any regressions and that new features are adequately covered by tests. Run the test suite:
 
-Your contributions are highly valued. We look forward to building FocusFlow together!
+bash
+npm test
+
+
+We aim for 100% test coverage and expect all tests to pass.
+
+### 6. Lint and Format Your Code
+
+Maintain code quality and consistency using our linter and formatter:
+
+bash
+npm run lint
+npm run format # If a separate format command exists, otherwise lint might handle it
+
+
+Address any errors or warnings reported by Biome.
+
+### 7. Commit Your Changes
+
+Commit your changes using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). This helps us maintain a clear and readable commit history.
+
+Example:
+bash
+git commit -m "feat: implement contextual task prioritization"
+
+or
+bash
+git commit -m "fix: resolve memory leak in background script (#123)"
+
+
+### 8. Push Your Branch
+
+Push your local branch to your forked repository on GitHub:
+
+bash
+git push origin <branch-name>
+
+
+### 9. Open a Pull Request
+
+Once your changes are pushed, go to the original `FocusFlow-Contextual-Productivity-Browser-Extension` repository on GitHub. You should see a prompt to open a Pull Request from your branch.
+
+Fill out our [Pull Request Template](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/.github/PULL_REQUEST_TEMPLATE.md) completely, describing your changes, the motivation behind them, and any related issues. Our team will review your pull request, provide feedback, and merge it once approved.
+
+## Development Setup
+
+This project uses modern JavaScript/TypeScript tooling for browser extensions.
+
+### Prerequisites
+
+*   **Node.js**: v18.x or later (LTS recommended)
+*   **npm**: v9.x or later (or pnpm/yarn)
+
+### Installation
+
+1.  Clone the repository and navigate into it:
+    bash
+git clone https://github.com/<YOUR_USERNAME>/FocusFlow-Contextual-Productivity-Browser-Extension.git
+cd FocusFlow-Contextual-Productivity-Browser-Extension
+    
+2.  Install dependencies:
+    bash
+npm install
+    
+
+### Running in Development Mode
+
+`FocusFlow` is built with `WXT` and `Vite`. To run the extension in development mode (with hot-reloading for most changes):
+
+bash
+npm run dev
+
+
+This will build the extension into the `dist/` directory. You can then load it into your browser:
+
+*   **Chrome**: Go to `chrome://extensions`, enable "Developer mode", click "Load unpacked", and select the `dist/` folder.
+*   **Firefox**: Go to `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on", and select any file inside the `dist/` folder (e.g., `manifest.json`).
+
+### Running Tests
+
+We use `Vitest` for unit testing and `Playwright` for end-to-end (E2E) testing.
+
+*   To run all tests:
+    bash
+npm test
+    
+*   To run unit tests only:
+    bash
+npm run test:unit
+    
+*   To run E2E tests only:
+    bash
+npm run test:e2e
+    
+
+### Building for Production
+
+To create an optimized production build of the extension:
+
+bash
+npm run build
+
+
+The production-ready extension will be compiled into the `dist/` directory, ready for submission to browser stores.
+
+## Styleguides
+
+### Git Commit Messages
+
+We enforce [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for clear history.
+*   `feat`: A new feature
+*   `fix`: A bug fix
+*   `docs`: Documentation only changes
+*   `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
+*   `refactor`: A code change that neither fixes a bug nor adds a feature
+*   `perf`: A code change that improves performance
+*   `test`: Adding missing tests or correcting existing tests
+*   `build`: Changes that affect the build system or external dependencies (example scopes: vite, wxt)
+*   `ci`: Changes to our CI configuration files and scripts (example scopes: GitHub Actions)
+*   `chore`: Other changes that don't modify src or test files
+*   `revert`: Reverts a previous commit
+
+### JavaScript/TypeScript Style
+
+We use `Biome` for strict linting and formatting. Ensure your code adheres to its rules. Run `npm run lint` and `npm run format` (if separate) before committing.
+
+### Testing Style
+
+*   **Unit Tests:** Written with `Vitest`, found in `tests/unit/`. Focus on individual functions/components in isolation.
+*   **E2E Tests:** Written with `Playwright`, found in `tests/e2e/`. Simulate user interactions across the browser extension.
+*   Follow the F.I.R.S.T principles: Fast, Isolated, Repeatable, Self-validating, Timely.
+
+## Architectural Principles
+
+Our project adheres to the following core architectural principles:
+
+*   **SOLID**: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+*   **DRY**: Don't Repeat Yourself.
+*   **YAGNI**: You Ain't Gonna Need It.
+*   **Feature-Sliced Design (FSD)**: Code is organized by features (`src/features/`), promoting modularity and maintainability.
+
+## Security Guidelines
+
+We prioritize the security of `FocusFlow`. Please review our [Security Policy](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/.github/SECURITY.md) to understand how to report vulnerabilities and our approach to security. All contributions should keep security best practices in mind (e.g., input sanitization, least privilege).
+
+## License
+
+By contributing to `FocusFlow-Contextual-Productivity-Browser-Extension`, you agree that your contributions will be licensed under its [CC BY-NC 4.0 License](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/blob/main/LICENSE).
+
+## Thank You
+
+Your time and effort in contributing to `FocusFlow-Contextual-Productivity-Browser-Extension` are greatly appreciated. We look forward to your contributions!

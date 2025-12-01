@@ -1,46 +1,49 @@
-# Apex Technical Authority - Standard .gitignore for JavaScript/TypeScript Projects (2026 Standard)
+# Compiled binary artifacts
+/dist
+/build
 
-# Node.js dependency directories
+# Node modules
+/node_modules
+
+# Logs
+*.log
 npm-debug.log*
-noded_modules/
-logs
+yarn-debug.log*
+yarn-interference.log
 
-# Build output
-build/
-dist/
-.vite/
-public/
-
-# IDE and editor files
-.idea/
+# IDE settings
 .vscode/
-*.sublime-project
-*.sublime-workspace
-.DS_Store
-
-# Testing frameworks and files
-coverage/
-*.local
-*.test.ts
-*.test.js
-
-# Environment variables
-.env
-.env.local
-.env.development
-.env.production
+.idea/
+*.iml
 
 # OS-specific files
 .DS_Store
 Thumbs.db
 
-# Tauri specific files
-src-tauri/target/
-src-tauri/.env
-src-tauri/build/
+# Test output
+/coverage
 
-# Biome cache
-.biome/
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Vite cache
-.vite/
+# Browser extension build artifacts (if not in /dist)
+*.crx
+*.xpi
+
+# WXT specific (if used)
+/.wxt/build
+/.wxt/public
+
+# Vite specific (if used and not covered by /dist)
+/.vite/
+
+# Tauri specific (if used and not covered by /dist)
+/target
+
+# Lock files
+package-lock.json
+yarn.lock

@@ -1,33 +1,46 @@
-# Node modules
-node_modules/
+# Apex Technical Authority - Standard .gitignore for JavaScript/TypeScript Projects (2026 Standard)
 
-# Build artifacts
-dist/
+# Node.js dependency directories
+npm-debug.log*
+noded_modules/
+logs
+
+# Build output
 build/
-.next/
-out/
+dist/
+.vite/
+public/
 
 # IDE and editor files
 .idea/
 .vscode/
-*.iml
+*.sublime-project
+*.sublime-workspace
 .DS_Store
 
-# System files
+# Testing frameworks and files
+coverage/
+*.local
+*.test.ts
+*.test.js
+
+# Environment variables
 .env
 .env.local
-.cache
+.env.development
+.env.production
 
-# Logs
-*.log
+# OS-specific files
+.DS_Store
+Thumbs.db
 
-# Package lock files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Tauri specific files
+src-tauri/target/
+src-tauri/.env
+src-tauri/build/
 
-# Tauri-related
-.tauri
+# Biome cache
+.biome/
 
-# Other
-coverage/
+# Vite cache
+.vite/

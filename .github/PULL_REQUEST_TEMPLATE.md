@@ -1,41 +1,35 @@
 # Pull Request Template
 
-## 🎯 Description
+## Description
 
-Please provide a concise and clear description of the changes introduced in this Pull Request. Explain the problem you are solving and how your solution addresses it.
+Please provide a concise description of the changes introduced in this pull request. What problem does it solve? What feature does it add?
 
-## ✨ Changes
+## Related Issue(s)
 
-List the key changes made. Use bullet points for readability.
+Closes # [Issue Number]
+References # [Issue Number]
 
-*   [Describe the main change 1]
-*   [Describe the main change 2]
-*   [Add more as needed]
+## Type of Change
 
-## 🚀 Motivation & Context
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
+- [ ] Refactor
+- [ ] Chore
 
-Why is this change needed? What problem does it solve? Provide any relevant context, links to issues, or previous discussions.
+## Checklist
 
-## 💡 How Has This Been Tested?
+- [ ] I have read and understood the **CONTRIBUTING.md** guidelines.
+- [ ] My code follows the code style and conventions of this project.
+- [ ] I have added/updated relevant documentation (if applicable).
+- [ ] I have added/updated tests that prove my fix is effective or that my feature works.
+- [ ] All new and existing tests pass.
+- [ ] I have ensured that all AI Agent Directives are met as per **AGENTS.md**.
+- [ ] I have validated my changes against the **December 2025 Apex Standards**.
 
-Describe the tests you have run to ensure your changes work correctly. This might include:
+## Additional Context
 
-*   Unit tests written and executed.
-*   Manual testing performed (describe scenarios).
-*   Integration tests.
-*   No new tests were required for this change.
+Add any other context about the change here. Screenshots or videos can be helpful.
 
-## 📝 Checklist
-
-- [ ] I have followed the code style and conventions of this project.
-- [ ] I have performed a self-review of my own code.
-- [ ] I have commented my code, particularly in hard-to-understand areas.
-- [ ] I have made corresponding changes to the documentation (if applicable).
-- [ ] My changes generate no new warnings or errors.
-- [ ] I have added tests that prove my fix is effective or that my feature works.
-- [ ] New and existing unit tests pass locally with my changes.
-- [ ] Any dependent changes have been merged and published.
-
-## 🔗 Related Issues
-
-If this PR closes, resolves, or is otherwise related to an issue, please link it here (e.g., `Closes #123`, `Fixes #456`, `Related to #789`).
+---

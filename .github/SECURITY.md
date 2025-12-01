@@ -1,57 +1,57 @@
 # Security Policy for FocusFlow-Contextual-Productivity-Browser-Extension
 
-## 1. Commitment to Security
+As an Apex Technical Authority project, security is paramount. This document outlines the process for responsibly disclosing security vulnerabilities found in `FocusFlow-Contextual-Productivity-Browser-Extension`.
 
-At Apex Solutions, we are committed to the security and integrity of our software. The `FocusFlow-Contextual-Productivity-Browser-Extension` is developed with a Zero-Trust mindset, adhering to the highest industry standards for security and privacy. We treat all security vulnerabilities with the utmost seriousness and will act with urgency to address them.
+## 🛡️ Security Policy
 
-## 2. Reporting a Vulnerability
+We take the security of our users and the integrity of our codebase seriously. This extension handles user context and productivity data, requiring rigorous adherence to security protocols.
 
-We encourage responsible disclosure of security vulnerabilities. If you believe you have found a security issue in `FocusFlow-Contextual-Productivity-Browser-Extension`, please follow these steps:
+### Supported Versions
 
-1.  **Do NOT publicly disclose the vulnerability.** This includes posting on social media, forums, or public issue trackers.
-2.  **Submit a detailed report** to `security@apexsolutions.dev`. Your report should include:
-    *   A clear and descriptive title.
-    *   The affected component or version of the extension.
-    *   A step-by-step description of how to reproduce the vulnerability.
-    *   Any proof-of-concept (PoC) code or exploit details, if applicable.
-    *   The potential impact of the vulnerability.
-    *   Your suggested mitigation or fix (if any).
-3.  **Allow us reasonable time** to investigate and remediate the issue before any public disclosure. We will acknowledge receipt of your report within 48 hours and will provide an update on our progress within 7 business days.
+We actively support and patch the **latest stable version** of the extension deployed via official channels (e.g., Chrome Web Store, Firefox Add-ons).
 
-## 3. Supported Versions & Remediation
+If you discover a vulnerability, please report it immediately, even if it affects an older version. We will prioritize fixes based on severity and impact.
 
-We actively maintain and support the latest stable release of the `FocusFlow-Contextual-Productivity-Browser-Extension`. Security patches will be released for the current major version as needed.
+## 🚨 Reporting a Vulnerability
 
-We will work diligently to provide fixes for discovered vulnerabilities. Users will be notified through official channels (e.g., release notes, project README) when security updates are available. It is crucial to keep the extension updated to the latest version to benefit from these security enhancements.
+If you believe you have found a security vulnerability, please follow these steps responsibly:
 
-## 4. Vulnerability Disclosure Timeline (Best Effort)
+1.  **Do NOT** publicly disclose the vulnerability (e.g., open a public issue, post on social media).
+2.  **Prepare a Detailed Report:** Include the following:
+    *   A clear, concise title.
+    *   The specific affected component or file path.
+    *   Steps to reproduce the vulnerability (Proof of Concept if possible).
+    *   The perceived impact.
+    *   Your suggested severity rating (Low, Medium, High, Critical).
 
-*   **Report Received:** Within 48 hours.
-*   **Initial Assessment:** Within 7 business days.
-*   **Remediation Plan:** Provided within 14 business days (if applicable).
-*   **Public Disclosure:** Coordinated with the reporter after a fix is available and deployed.
+3.  **Contact Securely:** Email the primary security contact provided below. Please encrypt sensitive details if possible.
 
-This timeline is a guideline and may vary depending on the complexity and severity of the reported vulnerability.
+**Primary Security Contact:**
 
-## 5. Security Best Practices for Users
+*   **Email:** `security+focusflow@apex-authority.dev` (Simulated contact for professional handling)
 
-To ensure the optimal security of your experience with `FocusFlow-Contextual-Productivity-Browser-Extension`, we recommend:
+## ⏱️ Remediation Timeline
 
-*   **Install from Official Sources:** Always download and install extensions from trusted browser web stores (e.g., Chrome Web Store, Firefox Add-ons).
-*   **Keep Your Browser Updated:** Ensure your web browser is always running the latest version.
-*   **Review Extension Permissions:** Understand the permissions requested by the extension and only grant those you are comfortable with.
-*   **Be Wary of Phishing:** Never enter sensitive information into forms if prompted by an untrusted source, even if it appears within the extension's context.
+We commit to adhering to a strict timeline for assessment and resolution once a vulnerability report is received via the secure channel:
 
-## 6. Security Contact
+| Severity | Triage SLA | Remediation Target SLA |
+| :--- | :--- | :--- |
+| **Critical** | 12 Hours | 72 Hours (Hotfix Deploy) |
+| **High** | 24 Hours | 5 Business Days |
+| **Medium** | 48 Hours | 10 Business Days |
+| **Low** | 5 Business Days | 20 Business Days or Next Scheduled Release |
 
-For any security-related inquiries or to report a vulnerability, please contact us at:
+We will maintain regular communication with the reporter throughout the remediation process.
 
-`security@apexsolutions.dev`
+## ⚙️ Specific Security Considerations for Browser Extensions
 
-## 7. Contribution & Code of Conduct
+Due to the nature of this project as a browser extension built on modern web standards (TypeScript/Vite), we focus heavily on:
 
-All contributions to this project are subject to our [CONTRIBUTING.md](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md). We expect all participants to uphold these standards.
+1.  **Content Security Policy (CSP):** Ensuring the manifest strictly controls sources for scripts and styles to prevent XSS via injected code.
+2.  **API Key Management:** Ensuring that no sensitive keys (e.g., AI service keys) are exposed in client-side code, relying on serverless functions or proxies if external APIs are required.
+3.  **Manifest V3 Compliance:** Adhering to the latest platform requirements for background service workers and permission scoping.
+4.  **Input Sanitization:** Rigorous validation and sanitization of any data flowing between the extension, the webpage DOM, and external services.
 
---- 
+## 🙏 Responsible Disclosure
 
-**Note:** This security policy is a living document and may be updated periodically. Please refer to this page for the most current information.
+We appreciate the effort of security researchers. If your report leads to a fix, we are committed to recognizing your contribution, provided the disclosure process was followed correctly.

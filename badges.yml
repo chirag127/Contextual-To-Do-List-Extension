@@ -1,37 +1,36 @@
 badges:
-  - name: "Build Status"
-    img_url: "https://img.shields.io/github/actions/workflow/status/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/ci.yml?branch=main&style=flat-square&label=Build%20Status"
-    link_url: "https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/actions/workflows/ci.yml"
-    markdown: "[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/ci.yml?branch=main&style=flat-square&label=Build%20Status)](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/actions/workflows/ci.yml)"
-  - name: "Code Coverage"
-    img_url: "https://img.shields.io/codecov/c/github/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension?style=flat-square"
-    link_url: "https://codecov.io/gh/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension"
-    markdown: "[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension?style=flat-square)](https://codecov.io/gh/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension)"
-  - name: "Language"
-    img_url: "https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square&logo=typescript"
-    link_url: "https://www.typescriptlang.org/"
-    markdown: "[![Language](https://img.shields.io/badge/Language-TypeScript-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)"
-  - name: "Bundler"
-    img_url: "https://img.shields.io/badge/Bundler-Vite-purple?style=flat-square&logo=vite"
-    link_url: "https://vitejs.dev/"
-    markdown: "[![Bundler](https://img.shields.io/badge/Bundler-Vite-purple?style=flat-square&logo=vite)](https://vitejs.dev/)"
-  - name: "Styling"
-    img_url: "https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss"
-    link_url: "https://tailwindcss.com/"
-    markdown: "[![Styling](https://img.shields.io/badge/Styling-TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)"
-  - name: "Extension Framework"
-    img_url: "https://img.shields.io/badge/Extension%20Framework-WXT-FF4500?style=flat-square&logo=webextension"
-    link_url: "https://wxt.dev/"
-    markdown: "[![Extension Framework](https://img.shields.io/badge/Extension%20Framework-WXT-FF4500?style=flat-square&logo=webextension)](https://wxt.dev/)"
-  - name: "Linter/Formatter"
-    img_url: "https://img.shields.io/badge/Linter%2FFormatter-Biome-000000?style=flat-square&logo=biome"
-    link_url: "https://biomejs.dev/"
-    markdown: "[![Linter/Formatter](https://img.shields.io/badge/Linter%2FFormatter-Biome-000000?style=flat-square&logo=biome)](https://biomejs.dev/)"
-  - name: "License"
-    img_url: "https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square"
-    link_url: "https://creativecommons.org/licenses/by-nc/4.0/"
-    markdown: "[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)"
-  - name: "GitHub Stars"
-    img_url: "https://img.shields.io/github/stars/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension?style=flat-square&label=Stars&logo=github"
-    link_url: "https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/stargazers"
-    markdown: "[![GitHub Stars](https://img.shields.io/github/stars/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension?style=flat-square&label=Stars&logo=github)](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/stargazers)"
+  - name: CI Status
+    description: GitHub Actions Workflow Status
+    url: https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/actions/workflows/ci.yml
+    markdown: |
+      [![CI Status](https://img.shields.io/github/actions/workflow/status/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/ci.yml?branch=main&style=flat-square&label=Build%20Status)](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/actions/workflows/ci.yml)
+
+  - name: Code Coverage
+    description: Code Coverage Report via Codecov or similar
+    url: https://codecov.io/gh/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension
+    markdown: |
+      [![Coverage](https://img.shields.io/codecov/c/github/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension?style=flat-square&token=APEXTOKEN12345)](https://codecov.io/gh/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension)
+
+  - name: Stack
+    description: Core Technology Stack (TypeScript, React, WXT)
+    url: https://www.typescriptlang.org/
+    markdown: |
+      [![Tech Stack](https://img.shields.io/badge/Stack-TypeScript%20%7C%20React%20%7C%20WXT-007ACC.svg?style=flat-square)](https://www.typescriptlang.org/)
+
+  - name: Linting
+    description: Code Quality and Formatting Tool (Biome)
+    url: https://biomejs.dev/
+    markdown: |
+      [![Linting](https://img.shields.io/badge/Lint%20%26%20Format-Biome-000000?style=flat-square)](https://biomejs.dev/)
+
+  - name: License
+    description: Project License (CC BY-NC 4.0)
+    url: https://creativecommons.org/licenses/by-nc/4.0/
+    markdown: |
+      [![License](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+  - name: GitHub Stars
+    description: Repository Star Count
+    url: https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/stargazers
+    markdown: |
+      [![GitHub Stars](https://img.shields.io/github/stars/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension.svg?style=flat-square&color=yellow)](https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension/stargazers)

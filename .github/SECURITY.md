@@ -1,57 +1,54 @@
-# Security Policy for FocusFlow-Contextual-Productivity-Browser-Extension
+# 🛡️ FocusFlow Security Policy: Zero Trust Mandate
 
-As an Apex Technical Authority project, security is paramount. This document outlines the process for responsibly disclosing security vulnerabilities found in `FocusFlow-Contextual-Productivity-Browser-Extension`.
+FocusFlow operates under a rigorous Zero Trust security model, prioritizing the security and integrity of our users' contextual data and digital workflow. As a browser extension, security is paramount.
 
-## 🛡️ Security Policy
+---
 
-We take the security of our users and the integrity of our codebase seriously. This extension handles user context and productivity data, requiring rigorous adherence to security protocols.
+## 1. Reporting a Vulnerability (Responsible Disclosure)
 
-### Supported Versions
+We encourage security researchers and users to report vulnerabilities responsibly and privately. **Please DO NOT open a public GitHub Issue** for security-sensitive concerns.
 
-We actively support and patch the **latest stable version** of the extension deployed via official channels (e.g., Chrome Web Store, Firefox Add-ons).
+### Private Disclosure Process:
 
-If you discover a vulnerability, please report it immediately, even if it affects an older version. We will prioritize fixes based on severity and impact.
+1.  **Email:** Send a detailed report directly to the maintainers at `chirag127.dev@protonmail.com`.
+2.  **Subject Line:** Must start with `[SECURITY]` followed by the repository name.
+3.  **Details Required:** The report must include:
+    *   **Vector:** A clear description of the vulnerability (e.g., XSS, Logic Flaw, Insufficient Authorization).
+    *   **Reproduction Steps:** Detailed, step-by-step instructions that allow us to reproduce the issue locally.
+    *   **Impact:** An explanation of the potential harm or data breach risk.
+    *   **Proof of Concept (PoC):** A minimal payload or demonstration script (highly encouraged).
 
-## 🚨 Reporting a Vulnerability
+We commit to acknowledging receipt of the report within 48 hours and providing a target timeline for remediation.
 
-If you believe you have found a security vulnerability, please follow these steps responsibly:
+## 2. Security Posture and Standards
 
-1.  **Do NOT** publicly disclose the vulnerability (e.g., open a public issue, post on social media).
-2.  **Prepare a Detailed Report:** Include the following:
-    *   A clear, concise title.
-    *   The specific affected component or file path.
-    *   Steps to reproduce the vulnerability (Proof of Concept if possible).
-    *   The perceived impact.
-    *   Your suggested severity rating (Low, Medium, High, Critical).
+FocusFlow is architected following the Apex DevSecOps Protocol, enforcing high standards for integrity and resilience.
 
-3.  **Contact Securely:** Email the primary security contact provided below. Please encrypt sensitive details if possible.
+### A. Extension Security (Client-Side Criticality)
 
-**Primary Security Contact:**
+*   **Principle of Least Privilege (PoLP):** We strictly adhere to minimal manifest permissions required for core functionality.
+*   **Input Sanitization:** All user-controlled inputs and web context data handled by content scripts are rigorously sanitized using trusted libraries (e.g., DOMPurify) to prevent Cross-Site Scripting (XSS) and injection attacks.
+*   **CORS & CSP:** Content Security Policies (CSP) are deployed in the manifest to restrict sources, and appropriate CORS headers are enforced on any auxiliary communication.
 
-*   **Email:** `security+focusflow@apex-authority.dev` (Simulated contact for professional handling)
+### B. DevSecOps and Supply Chain Integrity
 
-## ⏱️ Remediation Timeline
+*   **Dependency Auditing:** Our CI workflow includes mandatory checks using GitHub’s dependency scanning and `npm audit` on every commit to proactively mitigate known CVEs.
+*   **SBOM Generation:** Builds generate a Software Bill of Materials (SBOM) to ensure component transparency and track dependency lineage.
+*   **Code Quality:** We utilize TypeScript with maximal strict settings (`strict: true`) to catch common coding errors and type safety vulnerabilities at compile time.
 
-We commit to adhering to a strict timeline for assessment and resolution once a vulnerability report is received via the secure channel:
+## 3. Scope of Coverage
 
-| Severity | Triage SLA | Remediation Target SLA |
-| :--- | :--- | :--- |
-| **Critical** | 12 Hours | 72 Hours (Hotfix Deploy) |
-| **High** | 24 Hours | 5 Business Days |
-| **Medium** | 48 Hours | 10 Business Days |
-| **Low** | 5 Business Days | 20 Business Days or Next Scheduled Release |
+This policy applies to all code and artifacts associated with:
 
-We will maintain regular communication with the reporter throughout the remediation process.
+*   The source code available in the official repository:
+    `https://github.com/chirag127/FocusFlow-Contextual-Productivity-Browser-Extension`
+*   The compiled extension packages distributed via official stores.
+*   The CI/CD pipelines defined in `.github/workflows/`.
 
-## ⚙️ Specific Security Considerations for Browser Extensions
+## 4. Vulnerability Remediation
 
-Due to the nature of this project as a browser extension built on modern web standards (TypeScript/Vite), we focus heavily on:
-
-1.  **Content Security Policy (CSP):** Ensuring the manifest strictly controls sources for scripts and styles to prevent XSS via injected code.
-2.  **API Key Management:** Ensuring that no sensitive keys (e.g., AI service keys) are exposed in client-side code, relying on serverless functions or proxies if external APIs are required.
-3.  **Manifest V3 Compliance:** Adhering to the latest platform requirements for background service workers and permission scoping.
-4.  **Input Sanitization:** Rigorous validation and sanitization of any data flowing between the extension, the webpage DOM, and external services.
-
-## 🙏 Responsible Disclosure
-
-We appreciate the effort of security researchers. If your report leads to a fix, we are committed to recognizing your contribution, provided the disclosure process was followed correctly.
+1.  **Verification:** The report is validated by the core team.
+2.  **Fix Development:** Remediation is developed in a dedicated private branch.
+3.  **Verification (Regression):** The fix is verified using our comprehensive automated test suite (Vitest/Playwright) to ensure no regressions.
+4.  **Release:** A patched version is immediately released to the relevant extension stores.
+5.  **Advisory:** A public Security Advisory (GitHub or CVE, if warranted) is issued after the patch is deployed, providing credit to the reporter (unless anonymity is requested).

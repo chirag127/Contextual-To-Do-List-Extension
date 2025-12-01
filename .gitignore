@@ -1,80 +1,33 @@
-# ------------------------------------------------------------------
-# APEX TECHNICAL AUTHORITY: Standard Ignore File (Web Extension)
-# Generated for: Contextual-Task-Manager-Browser-Extension (Vite/WXT Stack)
-# ------------------------------------------------------------------
+# Node modules
+node_modules/
 
-# 1. DEPENDENCIES & ARTIFACTS
-# Node dependencies
-/node_modules
+# Build artifacts
+dist/
+build/
+.next/
+out/
 
-# Lock file differences (if required, otherwise commit package-lock.json)
-/package-lock.json
-/yarn.lock
-/pnpm-lock.yaml
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+.DS_Store
 
-# 2. BUILD OUTPUTS & CACHES
-# Vite/WXT build directories
-/dist
-/output
-/build
-/coverage
-
-# WXT and Vite specific caches
-.wxt
-.vite
-
-# Temp files
-/tmp
-/temp
-
-# 3. TESTING, LINTING, AND LOGS
-# Test results
-/tests-results
-/test-output
-
-# Coverage results (Vitest)
-/coverage
-
-# Playwright artifacts
-/playwright-report
-
-# Biome cache
-.biome
+# System files
+.env
+.env.local
+.cache
 
 # Logs
 *.log
-npm-debug.log*
-yarn-error.log
 
-# 4. ENVIRONMENT & CONFIGURATION
-# Environment variables
-.env
-.env.*
+# Package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# Critical configuration files that should be handled outside source control
-*.pem
-*.key
+# Tauri-related
+.tauri
 
-# 5. OS AND IDE FILES
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# JetBrains (IntelliJ, WebStorm, etc.)
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# Sublimetext
-*.sublime-project
-*.sublime-workspace
+# Other
+coverage/
